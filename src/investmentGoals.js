@@ -2,7 +2,7 @@ function convertToMonthlyReturnRate(yearlyReturnRate) {
   return yearlyReturnRate ** (1 / 12);
 }
 
-function generateReturnArray(
+export function generateReturnArray(
   startingAmount = 0,
   timeHorizon = 0,
   timePeriod = "monthly",

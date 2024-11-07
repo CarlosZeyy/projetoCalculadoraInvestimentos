@@ -14,7 +14,7 @@
 
     <form id="investment-form" class="w-full">
 
-      <div class="flex flex-col w-full px-6 my-2">
+      <div class="flex flex-col w-full px-6 my-2 h-[4.25rem]">
         <label for="starting-amount" class="text-white/75 font-bold">Investimento inicial</label>
 
         <div class="flex">
@@ -24,8 +24,8 @@
         </div>
       </div>
 
-      <div class="flex flex-col w-full px-6 my-2">
-        <label for="additional-contribuition" class="text-white/75 font-bold">Aportes adicionais</label>
+      <div class="flex flex-col w-full px-6 my-2 h-[4.25rem]">
+        <label for="additional-contribution" class="text-white/75 font-bold">Aportes adicionais</label>
 
         <div class="flex">
           <input value="R$" class="w-1/6 text-center text-white font-bold rounded-l-lg" type="text" disabled>
@@ -35,7 +35,7 @@
       </div>
 
 
-      <div class="flex flex-col w-full px-6 my-2">
+      <div class="flex flex-col w-full px-6 my-2 h-[4.25rem]">
         <label for="time-amount" class="text-white/75 font-bold">Prazo</label>
 
         <div class="flex">
@@ -49,7 +49,7 @@
         </div>
       </div>
 
-      <div class="flex flex-col w-full px-6 my-2">
+      <div class="flex flex-col w-full px-6 my-2 h-[4.25rem]">
         <label for="return-rate" class="text-white/75 font-bold">Rentabilidade</label>
 
         <div class="flex">
@@ -64,7 +64,7 @@
       </div>
 
 
-      <div class="flex flex-col w-full px-6 my-2">
+      <div class="flex flex-col w-full px-6 my-2 h-[4.25rem]">
         <label for="tax-rate" class="text-white/75 font-bold">Imposto sobre lucro</label>
 
         <div class="flex">
@@ -78,7 +78,7 @@
     <div class="flex h-12 px-6 my-8 w-full gap-2">
       <button id="calculate-results" form="investment-form" type="submit"
         class="text-white w-1/2 rounded-lg bg-zinc-700 border-2 font-bold hover:bg-white hover:text-black">Calcular</button>
-      <button class="text-white w-1/2 rounded-lg hover:border-2 hover:text-white">Limpar</button>
+      <button class="text-white w-1/2 rounded-lg hover:border-2 hover:text-white" id="clear-form">Limpar</button>
     </div>
 
   </aside>

@@ -1,3 +1,4 @@
+import { color } from "chart.js/helpers";
 import { generateReturnArray } from "./src/investmentGoals";
 import { Chart } from "chart.js/auto";
 
@@ -71,6 +72,16 @@ function renderProgression(evt) {
         },
       ],
     },
+    options: {
+      plugins: {
+        legend: {
+          display: true,
+          labels: {
+            color: "#fff",
+          },
+        },
+      },
+    },
   });
 
   progressionChartReference = new Chart(progressionChart, {
@@ -93,13 +104,33 @@ function renderProgression(evt) {
       ],
     },
     options: {
+      plugins: {
+        legend: {
+          display: true,
+          labels: {
+            color: "#fff",
+          },
+        },
+      },
       responsive: true,
       scales: {
         x: {
           stacked: true,
+          ticks: {
+            color: "#fff",
+          },
+          grid: {
+            color: "rgba(255, 255, 255, 0.1)",
+          },
         },
         y: {
           stacked: true,
+          ticks: {
+            color: "#fff",
+          },
+          grid: {
+            color: "rgba(255, 255, 255, 0.1)",
+          },
         },
       },
     },

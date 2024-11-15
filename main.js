@@ -233,21 +233,25 @@ for (const formElement of form) {
   }
 }
 
-const mainEl = document.querySelector("main");
-const carouselEl = document.getElementById("carousel");
-const nextBtn = document.getElementById("slide-arrow-next");
-const previousBtn = document.getElementById("slide-arrow-previous");
+document.addEventListener("DOMContentLoaded", function () {
+  const mainEl = document.querySelector("main");
+  const carouselEl = document.getElementById("carousel");
+  const nextBtn = document.getElementById("slide-arrow-next");
+  const previousBtn = document.getElementById("slide-arrow-previous");
 
-nextBtn.addEventListener("click", () => {
-  carouselEl.scrollLeft += mainEl.clientWidth;
-  nextBtn.style.display = "none"; // Esconde o botão "Próximo"
-  previousBtn.style.display = "block";
-});
+  previousBtn.style.display = "none";
 
-previousBtn.addEventListener("click", () => {
-  carouselEl.scrollLeft -= mainEl.clientWidth;
-  previousBtn.style.display = "none"; // Esconde o botão "Anterior"
-  nextBtn.style.display = "block";
+  nextBtn.addEventListener("click", () => {
+    carouselEl.scrollLeft += mainEl.clientWidth;
+    nextBtn.style.display = "none"; // Esconde o botão "Próximo"
+    previousBtn.style.display = "block";
+  });
+
+  previousBtn.addEventListener("click", () => {
+    carouselEl.scrollLeft -= mainEl.clientWidth;
+    previousBtn.style.display = "none"; // Esconde o botão "Anterior"
+    nextBtn.style.display = "block";
+  });
 });
 
 form.addEventListener("submit", renderProgression);

@@ -6,7 +6,6 @@ const finalMoneyChart = document.getElementById("final-money-distribution");
 const progressionChart = document.getElementById("progression");
 const form = document.getElementById("investment-form");
 const clearFormBtn = document.getElementById("clear-form");
-// const calculateBtn = document.getElementById("calculate-results");
 let doughnutChartReference = {};
 let progressionChartReference = {};
 
@@ -255,5 +254,4 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 form.addEventListener("submit", renderProgression);
-// calculateBtn.addEventListener("click", renderProgression);
 clearFormBtn.addEventListener("click", clearForm);

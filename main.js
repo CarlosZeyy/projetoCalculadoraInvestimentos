@@ -235,15 +235,19 @@ for (const formElement of form) {
 
 const mainEl = document.querySelector("main");
 const carouselEl = document.getElementById("carousel");
-const NextBtn = document.getElementById("slide-arrow-next");
-const PreviousBtn = document.getElementById("slide-arrow-previous");
+const nextBtn = document.getElementById("slide-arrow-next");
+const previousBtn = document.getElementById("slide-arrow-previous");
 
-NextBtn.addEventListener("click", () => {
+nextBtn.addEventListener("click", () => {
   carouselEl.scrollLeft += mainEl.clientWidth;
+  nextBtn.style.display = "none"; // Esconde o botão "Próximo"
+  previousBtn.style.display = "block";
 });
 
-PreviousBtn.addEventListener("click", () => {
+previousBtn.addEventListener("click", () => {
   carouselEl.scrollLeft -= mainEl.clientWidth;
+  previousBtn.style.display = "none"; // Esconde o botão "Anterior"
+  nextBtn.style.display = "block";
 });
 
 form.addEventListener("submit", renderProgression);

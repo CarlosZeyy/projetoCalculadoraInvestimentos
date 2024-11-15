@@ -1,6 +1,6 @@
-import { color } from "chart.js/helpers";
 import { generateReturnArray } from "./src/investmentGoals";
 import { Chart } from "chart.js/auto";
+import { createTable } from "./src/table";
 
 const finalMoneyChart = document.getElementById("final-money-distribution");
 const progressionChart = document.getElementById("progression");
@@ -10,8 +10,32 @@ const clearFormBtn = document.getElementById("clear-form");
 let doughnutChartReference = {};
 let progressionChartReference = {};
 
+const columnsArray = [
+  { columnLabel: "Mês", accessor: "month" },
+  {
+    columnLabel: "Total investido",
+    accessor: "investedAmount",
+    format: (numberInfo) => formatCurrency(numberInfo),
+  },
+  {
+    columnLabel: "Rendimento mensal",
+    accessor: "interestReturns",
+    format: (numberInfo) => formatCurrency(numberInfo),
+  },
+  {
+    columnLabel: "Redimento total",
+    accessor: "totalInterestReturns",
+    format: (numberInfo) => formatCurrency(numberInfo),
+  },
+  {
+    columnLabel: "Quantia total",
+    accessor: "totalAmount",
+    format: (numberInfo) => formatCurrency(numberInfo),
+  },
+];
+
 function formatCurrency(value) {
-  return value.toFixed(2);
+  return value.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
 }
 
 function renderProgression(evt) {
@@ -49,92 +73,94 @@ function renderProgression(evt) {
     returnRatePeriod
   );
 
-  const finalInvestmentObject = returnsArray[returnsArray.length - 1];
+  // const finalInvestmentObject = returnsArray[returnsArray.length - 1];
 
-  doughnutChartReference = new Chart(finalMoneyChart, {
-    type: "doughnut",
-    data: {
-      labels: ["Total investido", "Rendimento", "Imposto"],
-      datasets: [
-        {
-          data: [
-            formatCurrency(finalInvestmentObject.investedAmount),
+  // doughnutChartReference = new Chart(finalMoneyChart, {
+  //   type: "doughnut",
+  //   data: {
+  //     labels: ["Total investido", "Rendimento", "Imposto"],
+  //     datasets: [
+  //       {
+  //         data: [
+  //           formatCurrency(finalInvestmentObject.investedAmount),
 
-            formatCurrency(
-              finalInvestmentObject.totalInterestReturns * (1 - taxRate / 100)
-            ),
+  //           formatCurrency(
+  //             finalInvestmentObject.totalInterestReturns * (1 - taxRate / 100)
+  //           ),
 
-            formatCurrency(
-              finalInvestmentObject.totalInterestReturns * (taxRate / 100)
-            ),
-          ],
-          borderWidth: 1,
-        },
-      ],
-    },
-    options: {
-      plugins: {
-        legend: {
-          display: true,
-          labels: {
-            color: "#fff",
-          },
-        },
-      },
-    },
-  });
+  //           formatCurrency(
+  //             finalInvestmentObject.totalInterestReturns * (taxRate / 100)
+  //           ),
+  //         ],
+  //         borderWidth: 1,
+  //       },
+  //     ],
+  //   },
+  //   options: {
+  //     plugins: {
+  //       legend: {
+  //         display: true,
+  //         labels: {
+  //           color: "#fff",
+  //         },
+  //       },
+  //     },
+  //   },
+  // });
 
-  progressionChartReference = new Chart(progressionChart, {
-    type: "bar",
-    data: {
-      labels: returnsArray.map((investmentObject) => investmentObject.month),
-      datasets: [
-        {
-          label: "Total Investido",
-          data: returnsArray.map((investmentObject) =>
-            formatCurrency(investmentObject.investedAmount)
-          ),
-        },
-        {
-          label: "Retorno do Investimento",
-          data: returnsArray.map((investmentObject) =>
-            formatCurrency(investmentObject.interestReturns)
-          ),
-        },
-      ],
-    },
-    options: {
-      plugins: {
-        legend: {
-          display: true,
-          labels: {
-            color: "#fff",
-          },
-        },
-      },
-      responsive: true,
-      scales: {
-        x: {
-          stacked: true,
-          ticks: {
-            color: "#fff",
-          },
-          grid: {
-            color: "rgba(255, 255, 255, 0.1)",
-          },
-        },
-        y: {
-          stacked: true,
-          ticks: {
-            color: "#fff",
-          },
-          grid: {
-            color: "rgba(255, 255, 255, 0.1)",
-          },
-        },
-      },
-    },
-  });
+  // progressionChartReference = new Chart(progressionChart, {
+  //   type: "bar",
+  //   data: {
+  //     labels: returnsArray.map((investmentObject) => investmentObject.month),
+  //     datasets: [
+  //       {
+  //         label: "Total Investido",
+  //         data: returnsArray.map((investmentObject) =>
+  //           formatCurrency(investmentObject.investedAmount)
+  //         ),
+  //       },
+  //       {
+  //         label: "Retorno do Investimento",
+  //         data: returnsArray.map((investmentObject) =>
+  //           formatCurrency(investmentObject.interestReturns)
+  //         ),
+  //       },
+  //     ],
+  //   },
+  //   options: {
+  //     plugins: {
+  //       legend: {
+  //         display: true,
+  //         labels: {
+  //           color: "#fff",
+  //         },
+  //       },
+  //     },
+  //     responsive: true,
+  //     scales: {
+  //       x: {
+  //         stacked: true,
+  //         ticks: {
+  //           color: "#fff",
+  //         },
+  //         grid: {
+  //           color: "rgba(255, 255, 255, 0.1)",
+  //         },
+  //       },
+  //       y: {
+  //         stacked: true,
+  //         ticks: {
+  //           color: "#fff",
+  //         },
+  //         grid: {
+  //           color: "rgba(255, 255, 255, 0.1)",
+  //         },
+  //       },
+  //     },
+  //   },
+  // });
+
+  createTable(columnsArray, returnsArray, "results-table");
 }
 
 function isObjectEmpty(obj) {
@@ -203,6 +229,6 @@ for (const formElement of form) {
   }
 }
 
-// form.addEventListener("submit", renderProgression);
+form.addEventListener("submit", renderProgression);
 // calculateBtn.addEventListener("click", renderProgression);
 clearFormBtn.addEventListener("click", clearForm);

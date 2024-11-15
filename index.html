@@ -83,23 +83,29 @@
 
   </aside>
 
-  <main class="row-span-2 col-span-2 bg-zinc-800">
-    <!-- <section id="charts-container" class="h-full">
-      <div class="h-[36%] flex flex-col items-center pb-10">
-        <p class="font-bold text-lg text-white">Resultado Final</p>
-        <canvas id="final-money-distribution"></canvas>
-      </div>
+  <main class="row-span-2 col-span-2 bg-zinc-800 relative">
+    <button id="slide-arrow-previous"
+      class="absolute top-0 bottom-0 left-0 text-5xl text-white cursor-pointer bg-neutral-400 opacity-40 w-8 hover:opacity-100 focus:opacity-100">&#8249;</button>
+    <button id="slide-arrow-next"
+      class="absolute top-0 bottom-0 right-0 text-5xl text-white cursor-pointer bg-neutral-400 opacity-40 w-8 hover:opacity-100 focus:opacity-100">&#8250;</button>
+    <div id="carousel" class="h-full w-full flex overflow-x-auto scroll-smooth">
+      <section id="charts-container" class="h-full basis-full shrink-0">
+        <div class="h-[36%] flex flex-col items-center pb-10">
+          <p class="font-bold text-lg text-white">Resultado Final</p>
+          <canvas id="final-money-distribution"></canvas>
+        </div>
 
-      <div class="h-[56%] flex flex-col items-center">
-        <p class="font-bold text-lg text-white">Progressão</p>
-        <canvas id="progression"></canvas>
-      </div>
-    </section> -->
+        <div class="h-[56%] flex flex-col items-center">
+          <p class="font-bold text-lg text-white">Progressão</p>
+          <canvas id="progression"></canvas>
+        </div>
+      </section>
 
-    <section id="table-container" class="h-full overflow-y-auto">
-      <p class="font-bold text-lg text-white text-center">Resultados Mensais</p>
-      <table id="results-table" class="text-white w-full max-h-full border border-separate bg-zinc-800"></table>
-    </section>
+      <section id="table-container" class="h-full overflow-y-auto basis-full shrink-0">
+        <p class="font-bold text-lg text-white text-center">Resultados Mensais</p>
+        <table id="results-table" class="text-white w-full max-h-full border border-separate bg-zinc-800"></table>
+      </section>
+    </div>
   </main>
   <script type="module" src="./main.js"></script>
 </body>

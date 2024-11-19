@@ -3,7 +3,9 @@
 @tailwind utilities;
 
 @layer utilities {
-    .error {
-        @apply border-2 border-red-600 rounded-lg; 
-    }
+  .error {
+    @apply border-2;
+    @apply border-red-600;
+    @apply rounded-lg;
+  }
 }

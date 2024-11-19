@@ -1,6 +1,6 @@
 import { generateReturnArray } from "./src/investmentGoals.js";
 // import Chart from "chart.js/auto";
-import Chart from "./node_modules/chart.js/dist/chart.mjs";
+import Chart from "./node_modules/chart.js/dist/chart.cjs";
 
 import { createTable } from "./src/table.js";
 

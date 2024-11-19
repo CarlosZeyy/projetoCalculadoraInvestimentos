@@ -1,5 +1,10 @@
 import { defineConfig } from "vite";
 
 export default defineConfig({
-  base: "/projetoCalculadoraInvestimentos/", // Nome do repositório no GitHub
+  base: "/projetoCalculadoraInvestimentos/",
+  resolve: {
+    alias: {
+      "chart.js": "/node_modules/chart.js/dist/chart.mjs", // Resolve corretamente
+    },
+  },
 });

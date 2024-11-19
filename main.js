@@ -1,6 +1,6 @@
-import { generateReturnArray } from "./src/investmentGoals";
+import { generateReturnArray } from "./src/investmentGoals.js";
 import { Chart } from "chart.js/auto";
-import { createTable } from "./src/table";
+import { createTable } from "./src/table.js";
 
 const finalMoneyChart = document.getElementById("final-money-distribution");
 const progressionChart = document.getElementById("progression");

@@ -3,7 +3,6 @@
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 ![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 
 > Este projeto é uma aplicação prática desenvolvida para solidificar e demonstrar minhas habilidades em desenvolvimento front-end. O foco foi criar uma ferramenta funcional, interativa e com uma interface moderna, aplicando conceitos de JavaScript puro e Tailwind CSS.
 > #### 🚀 **[Acesse a versão online para uma experiência completa!](https://calcinvestimentos.netlify.app/)**
@@ -67,3 +66,4 @@ Durante o desenvolvimento desta aplicação, os seguintes conhecimentos foram po
 ## 👨‍💻 Sobre Mim
 
 * **Carlos Zeyy** - [GitHub](https://github.com/CarlosZeyy)
+

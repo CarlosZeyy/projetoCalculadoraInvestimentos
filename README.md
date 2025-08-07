@@ -48,7 +48,7 @@ Durante o desenvolvimento desta aplicação, os seguintes conhecimentos foram po
 
 1.  **Clone o repositório:**
     ```bash
-    git clone [https://github.com/CarlosZeyy/projetoCalculadoraInvestimentos.git](https://github.com/CarlosZeyy/projetoCalculadoraInvestimentos.git)
+    git clone https://github.com/CarlosZeyy/projetoCalculadoraInvestimentos
     ```
 2.  **Acesse a pasta do projeto:**
     ```bash
@@ -66,4 +66,5 @@ Durante o desenvolvimento desta aplicação, os seguintes conhecimentos foram po
 ## 👨‍💻 Sobre Mim
 
 * **Carlos Zeyy** - [GitHub](https://github.com/CarlosZeyy)
+
 
